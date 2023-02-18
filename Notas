@@ -15,3 +15,52 @@ Classe = Aluno
 Atributos = ra; nome; email; curso
 metodos = matricular; cancelar matricula; destrancarMatricula
 
+public class Aluno {
+    // 1. atributos de alunos
+    long ra;
+    String nome;
+    String email;
+    Stng curso;
+
+    // 2. metodos
+    void matricular () // por nao ser classe comecamos com letra minuscula
+    { // sout
+        System.out.println("Aluno: " + nome);
+        System.out.println("Seu ra e': " + ra);
+        System.out.println("Parabens voce foi matriculado!");
+    }
+
+    void desistirDisciplina()
+    {
+        System.out.println("Aluno: " + nome);
+        System.out.println("Teve sua matricula cancelada!");
+
+    }
+    //println = pula linha
+    // print = imprime normalmente
+
+    void destrancarMatricula()
+    {
+        System.out.println("Aluno: " + nome);
+        System.out.println("Seu ra e': " + ra);
+        System.out.println("Matricula destrancada");
+    }
+
+}
+---------------------------------------------------------
+
+/*em project clicamos em 'refactory' -> 'rename file' para renomear a classe*/
+/*em 'source' -> 'new' para criar uma nova classe*/
+public class AlunoTeste {
+    public static void main(String[] args)
+    {
+        // variavel objeto // em vez de o obejeto ir para a steck ele vai para o heap
+        Aluno alunoPedro = new Aluno();
+        alunoPedro.ra = 1;
+        alunoPedro.nome = "Pedro Antonio";
+        alunoPedro.email = "pedro@gmail.com";
+        alunoPedro.curso = "DSM";
+        alunoPedro.matricular();
+    }
+}
+
