@@ -5,4 +5,13 @@
 -> ALTO DESEMPENHO (PARA A  ÉPOCA);
 -> LINGUAGEM RETROCOMPATIL;
 EX: UM PORGRAMA ESCRITO EM JAVA 1, RODA EM JAVA 19;
-  
+ 
+ 
+------------------------------------------------------
+
+Orientação a Objetos
+---
+Classe = Aluno
+Atributos = ra; nome; email; curso
+metodos = matricular; cancelar matricula; destrancarMatricula
+
