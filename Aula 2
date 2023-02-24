@@ -1,0 +1,93 @@
+* Encapsular = Criar uma classe private (+)
+------------------------MAIN---------------------------
+public class ProdutoTeste {
+    public static void main(String[] args){
+        // definir dois prod-utos, entrada e saida
+        // no primeiro entrada no segundo e
+        // mostrar todos os dados dos dois produtos
+
+        Produto produto1 = new Produto();
+        produto1.setCodigo(1);
+        produto1.setDescricao("Serrote");
+        produto1.setPreco(10.0);
+
+        Produto produto2 = new Produto();
+        produto1.setCodigo(2);
+        produto1.setDescricao("Martelo");
+        produto1.setPreco(50.0);
+
+        // entrada de 15 martelo e saida de 5
+        produto1.darEntradaNoEstoque(15);
+        produto1.darSaidaNoEstoque(5);
+        produto1.imprimir();
+        
+        // entrada de 20 serrotes
+        produto2.darEntradaNoEstoque(20);
+        produto2.imprimir();
+    }
+}
+
+------------------------CLASSES E METODOS---------------------------
+
+public class Produto { // classe
+    // atributos
+    private int codigo;
+    private String descricao;
+    private double preco;
+    private int quantidade;
+
+
+    // construtor padrao
+    // public Produto(){
+    //
+    //}  sobrecarga de metodo construtor
+
+
+    //modificadores de acesso
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    //metodos que atendem os requisitos
+
+    public void darEntradaNoEstoque(int quantidade){
+        this.quantidade += quantidade;
+    }
+
+    public void darSaidaNoEstoque (int quantidade){
+        this.quantidade -= quantidade;
+    }
+
+    public void imprimir(){
+        System.out.println("\nCodigo: " + codigo);
+        System.out.println("Descricao: " + descricao);
+        System.out.println("Quantidade: " + quantidade);
+        System.out.println("Preco: " + preco); // crtl + d
+        System.out.println("-------------------------------"); // crtl + d
+    }
+}
