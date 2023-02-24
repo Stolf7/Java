@@ -15,8 +15,8 @@ Classe = Aluno
 Atributos = ra; nome; email; curso
 metodos = matricular; cancelar matricula; destrancarMatricula
 
-public class Aluno {
-    // 1. atributos de alunos
+public class Aluno { // nome da classe
+    // 1. atributos de alunos 
     long ra;
     String nome;
     String email;
