@@ -96,7 +96,7 @@ public class Produto { // classe
 
 main
 
-public class Main {
+public class ApoliceTeste {
     public static void main(String[] args){
 
         Apolice apolice1 = new Apolice();
