@@ -45,7 +45,7 @@ public class Acampamento {
     public void imprimir() {
         System.out.println("nome = " + nome);
         System.out.println("equipe = " + equipe);
-        System.out.println("idade = " + idade); // atalho -> atalho
+        System.out.println("idade = " + idade); // soutv -> atalho
     }
 
     public void separarGrupo() {
