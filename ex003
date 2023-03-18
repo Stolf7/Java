@@ -1,0 +1,150 @@
+GerenciarConta
+
+import java.util.Scanner;
+
+public class GerenciarConta {
+    //atributo cc -> (conta corrente) do tipo Conta
+    public Conta cc;
+
+    public Scanner sc = new Scanner(System.in);
+
+
+    public static void main(String[] args) {
+        GerenciarConta gerenciarConta = new GerenciarConta();
+        int opcao = 0;
+        do {
+            // montar o menu
+            System.out.println("Menu Principal");
+            System.out.println("1. Cadastrar conta");
+            System.out.println("2. Consultar");
+            System.out.println("3. Depositar");
+            System.out.println("4. Sacar");
+            System.out.println("9. Sair"); // crtl + d duplica a linha
+            System.out.println("Escolha sua opção: ");
+            opcao = Integer.parseInt(gerenciarConta.sc.nextLine());
+
+            switch (opcao){
+                case 1:
+                    gerenciarConta.execCadastrar();
+                    break;
+                case 2:
+                    gerenciarConta.execConsultar();
+                    break;
+                case 3:
+                    gerenciarConta.execDepositar();
+                    break;
+                case 4:
+                    gerenciarConta.execSacar();
+                    break;
+                case 9:
+                    System.out.println("Fim do Programa");
+                    break;
+                default:
+                    System.out.println("opção Invalida");
+                    break;
+            }
+
+        } while (opcao != 9);
+    }
+
+    public void execCadastrar() {
+        if (cc.getNumeroConta()!=null) {
+            System.out.println("Conta já cadastrada");
+            return;
+        }
+        System.out.println("Digite o nome do cliente: ");
+        cc.setNomeCliente(sc.nextLine());
+        System.out.println("Digite o numero da conta: ");
+        cc.setNumeroConta(sc.nextLine());
+        System.out.println("Digite o numero da agencia: ");
+        cc.setAgencia(sc.nextLine());
+        System.out.println("Conta cadastrada com sucesso");
+    }
+
+    public void execConsultar() {
+        System.out.println("Dados da Conta");
+        cc.imprimir();
+    }
+
+    public void execDepositar() {
+        double valor;
+        System.out.println("Digite o valor do saque: ");
+        valor = Double.parseDouble(sc.nextLine());
+        boolean ok = cc.sacar(valor);
+        if (ok) {
+            System.out.println("Saque efeutado com sucesso");
+        } else {
+            System.out.println("Saldo insuficiente");
+        }
+    }
+
+    public void execSacar() {
+        double valor;
+        System.out.println("Digite o valor do deposito: ");
+        valor = Double.parseDouble(sc.nextLine());
+        cc.depositar(valor);
+    }
+
+}
+
+
+Conta
+
+
+public class Conta {
+    private String NumeroConta, agencia, nomeCliente;
+    private double saldo;
+
+    public String getNumeroConta() {
+        return NumeroConta;
+    }
+
+    public void setNumeroConta(String numeroConta) {
+        NumeroConta = numeroConta;
+    }
+
+    public String getAgencia() {
+        return agencia;
+    }
+
+    public void setAgencia(String agencia) {
+        this.agencia = agencia;
+    }
+
+    public String getNomeCliente() {
+        return nomeCliente;
+    }
+
+    public void setNomeCliente(String nomeCliente) {
+        this.nomeCliente = nomeCliente;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public boolean sacar(double valor) {
+        if(valor <= saldo){
+        saldo -= valor;
+        return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void depositar(double valor) {
+            saldo += valor;
+        }
+
+
+    public void imprimir() {
+        System.out.println("NumeroConta = " + NumeroConta);
+        System.out.println("agencia = " + agencia);
+        System.out.println("nomeCliente = " + nomeCliente);
+        System.out.println("saldo = " + saldo);
+    }
+}
