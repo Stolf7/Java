@@ -1,0 +1,73 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class GerenciarConta {
+
+    public List<Conta> contas = new ArrayList<>();
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        //criar um menu, como o da lousa
+        System.out.println("Menu\n");
+        System.out.println("1 - Cadastrar Conta");
+        System.out.println("2 - Depositar");
+        System.out.println("3 - Sacar");
+        System.out.println("4 - Mostrar Saldo");
+        System.out.println("5 - Patrimonio do Banco");
+        System.out.println("9 - Sair");
+        //pedir a opcao para o usuario
+        System.out.println("\n");
+        int opcao;
+        opcao = Integer.parseInt(sc.nextLine());
+        System.out.println("Escolha a opção: ");
+
+        //montar switch case
+        int fim = 0;
+
+        while (fim < 1) {
+            switch (opcao) {
+                case 1: execCadastrarConta();
+                    break;
+                case 2: execDepositar();
+                    break;
+                case 3: execSacar();
+                    break;
+                case 4: execExibirSaldo();
+                    break;
+                case 5: execMostrarPatrimonio();
+                    break;
+                case 9: fim += 1;
+                    break;
+            }
+        }
+    }
+
+    public void execCadastrarConta(){
+        //pedir os dados ao usuario para criar uma conta. No final adicionar ela
+        //na lista (contas)
+
+    }
+
+    public void execDepositar(){
+
+
+    }
+
+    public void execSacar(){
+
+
+    }
+
+    public void execExibirSaldo(){
+
+
+    }
+
+    public void execMostrarPatrimonio(){
+
+
+    }
+
+}
